@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const port = 8080;
 
-app.use(express.static('frontend'));
+app.use(express.static('../frontend'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -18,7 +18,7 @@ var server = app.listen(port, function () {
 
 // Send the frontend folder.
 app.get('/', function (req, res) {
-    res.sendFile( __dirname + "/" + "frontend" );
+    res.sendFile( __dirname + "/" + "../frontend" );
 });
 
 /* Send the log files. Unused for now.
@@ -76,9 +76,9 @@ app.post('/mouseInput', function (req, res) {
     let deltaY = req.body.deltaY;
     
     switch(req.body.type) {
-        case "move":  executeShellCommand('nircmd\\nircmd.exe movecursor ' + deltaX + ' ' + deltaY); break;
-        case "left":  executeShellCommand('nircmd\\nircmd.exe sendmouse left click'); break;
-        case "right": executeShellCommand('nircmd\\nircmd.exe sendmouse right click'); break;
+        case "move":  executeShellCommand('sysUtils\\nircmd.exe movecursor ' + deltaX + ' ' + deltaY); break;
+        case "left":  executeShellCommand('sysUtils\\nircmd.exe sendmouse left click'); break;
+        case "right": executeShellCommand('sysUtils\\nircmd.exe sendmouse right click'); break;
     }
     
     res.send();
