@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="myScript.js"></script>
+        <script src="mousePad.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./style.css">
+        <title>Remote Controller</title>
+    </head>
+
+    <body onload="init()">
+        <div class="main-container">
+            
+            <div class="info-box">
+                <p class="info-text" id="info-text"></p>
+            </div>
+
+            <div class="slider-holder">
+                <div class="button-background" id="power-button-background">
+                    <span class="slide-text">Shut Down</span>
+                    <div class="slider" id="power-slider">
+                        <i id="power-locker" class="material-icons">power_settings_new</i>
+                    </div>
+                </div>
+                <div class="button-background" id="standby-button-background">
+                    <span class="slide-text">Stanby Mode</span>
+                    <div class="slider" id="standby-slider">
+                        <i id="stanby-locker" class="material-icons">mode_standby</i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="volume">    
+                <button class="button-81 volume-button" role="button" onclick="sendChangeVolumeCommand(-2000)"><i class="material-icons">remove</i></button>
+                <input type="range" min="1" max="100" value="50" class="rs-range" id="volume-slider" oninput="updateSlider(this.value)">
+                <button class="button-81 volume-button" role="button" onclick="sendChangeVolumeCommand(2000)"><i class="material-icons">add</i></button>
+            </div>
+
+            <div class="buttons">    
+                <button class="button-81 left-arrow" role="button" onclick="sendKeyInputCommand('{LEFT}')"><i class="material-icons">arrow_left</i></button>
+                <button class="button-81 space-bar" role="button" onclick="sendSpaceInputCommand()"><i class="material-icons">space_bar</i></button>
+                <button class="button-81 right-arrow" role="button" onclick="sendKeyInputCommand('{RIGHT}')"><i class="material-icons">arrow_right</i></button>    
+            </div>
+
+            <div class="mouse-pad" id="mouse-pad">
+                <button class="left-mouse-button" onclick="sendClickMouseCommand(true)"></button>
+                <button class="right-mouse-button" onclick="sendClickMouseCommand(false)"></button>
+            </div>            
+        </div>
+    <script  src="./sliderButton.js"></script>
+
+    </body>
+</html>
