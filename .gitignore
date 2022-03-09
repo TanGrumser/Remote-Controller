@@ -48,7 +48,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-
-#assets/TextMesh Pro/*
-*.exe
-*.exe.meta
