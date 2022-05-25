@@ -1,0 +1,26 @@
+{
+  "name": "remote-controller",
+  "version": "1.0.0",
+  "description": "This programm can be used to controll your computer with any other device via your local wifi network.",
+  "main": "backend/testServer.js",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "commander": "^9.0.0",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanGrumser/Remote-Controller.git"
+  },
+  "author": "Tan Grumser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TanGrumser/Remote-Controller/issues"
+  },
+  "homepage": "https://github.com/TanGrumser/Remote-Controller#readme"
+}
